@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salón Inteligente | Colegio Unión Europea</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: '#0B192C',
+                        brandBlue: '#1E3E62',
+                        brandGreen: '#10B981',
+                        brandGreenDark: '#059669',
+                        brandYellow: '#FACC15',
+                        brandLight: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-900">
+
+    <!-- ==================== 1. IDENTIDAD VISUAL Y NAVEGACIÓN FIJA ==================== -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 text-white transition-all duration-300 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- LOGO INTEGRADO EN LA PARTE SUPERIOR IZQUIERDA CON imagen1.png -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-800 border-2 border-emerald-500/30 group-hover:border-emerald-400 transition-all duration-300 shadow-lg shadow-emerald-500/10 shrink-0 flex items-center justify-center p-0.5">
+                        <img src="imagen1.png" alt="Logo Salón Inteligente" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0b192c/10b981?text=LOGO';">
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-white block leading-none">Salón<span class="text-emerald-400">Inteligente</span></span>
+                        <span class="text-xs text-slate-400 font-medium">Colegio Unión Europea • Grado 10°</span>
+                    </div>
+                </a>
+
+                <!-- NAVEGACIÓN DESKTOP -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-300">
+                    <a href="#inicio" class="hover:text-emerald-400 transition-colors py-1">Inicio</a>
+                    <a href="#proyecto" class="hover:text-emerald-400 transition-colors py-1">Proyecto</a>
+                    <a href="#problema" class="hover:text-emerald-400 transition-colors py-1">Problema</a>
+                    <a href="#justificacion" class="hover:text-emerald-400 transition-colors py-1">Justificación</a>
+                    <a href="#objetivos" class="hover:text-emerald-400 transition-colors py-1">Objetivos</a>
+                    <a href="#funcionamiento" class="hover:text-emerald-400 transition-colors py-1">Funcionamiento</a>
+                    <a href="#componentes" class="hover:text-emerald-400 transition-colors py-1">Componentes</a>
+                    <a href="#mercado" class="hover:text-emerald-400 transition-colors py-1">Estudio</a>
+                    <a href="#encuesta" class="hover:text-emerald-400 transition-colors py-1">Encuesta</a>
+                    <a href="#equipo" class="hover:text-emerald-400 transition-colors py-1">Equipo</a>
+                </nav>
+
+                <div class="hidden lg:block">
+                    <a href="#contacto" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl transition shadow-lg shadow-emerald-600/20 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Contactar
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Inicio</a>
+            <a href="#proyecto" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">¿Qué es el Proyecto?</a>
+            <a href="#problema" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Planteamiento del Problema</a>
+            <a href="#justificacion" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Justificación</a>
+            <a href="#objetivos" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Objetivos, Misión y Visión</a>
+            <a href="#funcionamiento" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Funcionamiento</a>
+            <a href="#componentes" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Componentes Electrónicos</a>
+            <a href="#impacto" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Beneficios e Impacto</a>
+            <a href="#mercado" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Estudio de Mercado</a>
+            <a href="#encuesta" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Encuesta de Validación</a>
+            <a href="#metodologia" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Metodología y Evaluación</a>
+            <a href="#equipo" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-medium">Nuestro Equipo</a>
+            <a href="#contacto" class="mobile-link block py-2 px-3 rounded-lg bg-emerald-600 text-white font-bold text-center">Contacto</a>
+        </div>
+    </header>
+
+    <!-- ==================== 2. PORTADA PRINCIPAL ==================== -->
+    <section id="inicio" class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-yellow-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/90 border border-slate-700 text-emerald-400 text-xs font-bold uppercase tracking-widest shadow-inner">
+                        <i class="fa-solid fa-leaf text-yellow-400"></i> Tecnología para un futuro sostenible
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        Transformamos los salones en <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-yellow-400">espacios inteligentes</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Proponemos una solución tecnológica que combina sensores, electrónica y automatización para mejorar el aprovechamiento de la energía eléctrica y contribuir a la seguridad de los espacios educativos. Nuestro objetivo es promover aulas más eficientes, seguras y sostenibles mediante la innovación.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#proyecto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base transition duration-300 shadow-xl shadow-emerald-600/20 flex items-center justify-center gap-3">
+                            <span>Conocer el proyecto</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#funcionamiento" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-base border border-slate-700 transition duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-gears text-yellow-400"></i>
+                            <span>Ver cómo funciona</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-800">
+                        <div class="bg-slate-800/60 p-3 sm:p-4 rounded-xl border border-slate-700/60 text-center">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xs sm:text-sm">Seguridad</h3>
+                            <p class="text-[11px] text-slate-400 mt-1 hidden sm:block">Alertas ante movimientos no autorizados</p>
+                        </div>
+
+                        <div class="bg-slate-800/60 p-3 sm:p-4 rounded-xl border border-slate-700/60 text-center">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xs sm:text-sm">Eficiencia Energética</h3>
+                            <p class="text-[11px] text-slate-400 mt-1 hidden sm:block">Control automático de luces</p>
+                        </div>
+
+                        <div class="bg-slate-800/60 p-3 sm:p-4 rounded-xl border border-slate-700/60 text-center">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 rounded-lg bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xs sm:text-sm">Innovación</h3>
+                            <p class="text-[11px] text-slate-400 mt-1 hidden sm:block">Sensores y microcontroladores</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Ilustración Maqueta Prototipo (imagen2.png) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/90 rounded-3xl p-5 border border-slate-700 shadow-2xl relative">
+                        <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-700">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Maqueta / Prototipo Iluminado
+                            </span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full font-mono">Modelo Escolar</span>
+                        </div>
+
+                        <!-- Imagen Ilustración Maqueta Prototipo -->
+                        <div class="relative w-full bg-white rounded-2xl p-2 border border-slate-700 overflow-hidden shadow-inner group">
+                            <div class="relative overflow-hidden rounded-xl">
+                                <img id="prototype-img" src="imagen2.png" alt="Maqueta Prototipo Salón Inteligente" class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105 cursor-pointer" onclick="openImageModal(this.src)" onerror="this.onerror=null; this.src='https://placehold.co/600x450/0b192c/ffffff?text=Maqueta+Prototipo';">
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                                    <span class="bg-slate-900/90 text-white text-xs font-bold px-3.5 py-2 rounded-full border border-slate-700 flex items-center gap-2 shadow-lg">
+                                        <i class="fa-solid fa-magnifying-glass-plus text-emerald-400"></i> Ampliar Maqueta
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selector interactivo de simulación -->
+                        <div class="mt-5 bg-slate-900 p-3.5 rounded-2xl border border-slate-700/80">
+                            <p class="text-xs font-semibold text-slate-300 mb-2.5 flex items-center justify-between">
+                                <span>Simulador de Estados del Prototipo:</span>
+                                <i class="fa-solid fa-sliders text-emerald-400"></i>
+                            </p>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <button onclick="setSimState('occupied-day')" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-left flex items-center gap-2 transition">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span> Día c/ Ocupantes
+                                </button>
+                                <button onclick="setSimState('empty-day')" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-left flex items-center gap-2 transition">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Desocupado (Off)
+                                </button>
+                                <button onclick="setSimState('occupied-dark')" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-left flex items-center gap-2 transition">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Oscuro c/ Presencia
+                                </button>
+                                <button onclick="setSimState('alert-night')" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-left flex items-center gap-2 transition">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Alerta Nocturna
+                                </button>
+                            </div>
+                            <div id="sim-status-text" class="mt-3 text-[11px] text-emerald-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                                Estado: Aula habitada de día. Luz natural suficiente detectada. Iluminación reducida activada.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. PRESENTACIÓN DEL PROYECTO ==================== -->
+    <section id="proyecto" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Definición y Alcance</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">¿Qué es Salón Inteligente?</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Detección de Movimiento</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Desarrollamos un prototipo capaz de detectar la presencia de estudiantes y docentes en el aula mediante sensores de última generación para responder en tiempo real a la presencia humana.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Control de Iluminación</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Controla las luces de acuerdo con las condiciones de luz ambiental y ocupación del salón, evitando que las bombillas o ventiladores permanezcan encendidos en aulas vacías.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Alertas de Seguridad</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Genera alertas sonoras automáticas ante movimientos detectados fuera del horario escolar configurado, contribuyendo a la protección de los materiales, equipos y mobiliario.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 rounded-3xl border border-slate-700 text-center max-w-4xl mx-auto shadow-2xl">
+                <p class="text-slate-200 text-base sm:text-lg font-medium leading-relaxed">
+                    <i class="fa-solid fa-quote-left text-emerald-400 mr-2 text-2xl"></i>
+                    Esta propuesta pedagógica integra áreas de conocimientos en <strong class="text-white">electrónica, programación, sensores, automatización y responsabilidad ambiental</strong>, aplicadas directamente a las necesidades reales e inmediatas de nuestra institución educativa.
+                    <i class="fa-solid fa-quote-right text-emerald-400 ml-2 text-2xl"></i>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. PLANTEAMIENTO DEL PROBLEMA ==================== -->
+    <section id="problema" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">Diagnóstico Escolar</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Planteamiento del Problema</h2>
+                    
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        En algunas instituciones educativas, las luces y los ventiladores pueden permanecer encendidos durante los descansos, cambios de clase o cuando los salones están totalmente desocupados. Esto ocasiona un uso innecesario de energía eléctrica y aumenta significativamente los costos de funcionamiento.
+                    </p>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Además, los salones pueden quedar expuestos a ingresos no autorizados fuera del horario escolar, lo que representa un riesgo para los equipos de cómputo, materiales didácticos y el mobiliario general del colegio.
+                    </p>
+
+                    <div class="bg-slate-800/80 border-l-4 border-emerald-500 p-5 rounded-r-2xl">
+                        <h4 class="font-bold text-white text-sm">Factores críticos detectados:</h4>
+                        <ul class="mt-2 space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-400"></i> Desperdicio recurrente de energía eléctrica.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-400"></i> Huella ecológica evitable y desgaste de insumos.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-400"></i> Vulnerabilidad ante intromisiones fuera de jornada escolar.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 sm:p-10 rounded-3xl border-2 border-yellow-400 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-2xl"></div>
+                        <div class="w-14 h-14 bg-yellow-400/20 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest block mb-3">Pregunta de Investigación</span>
+                        <blockquote class="text-xl sm:text-2xl font-black text-white leading-snug">
+                            "¿Cómo diseñar un sistema inteligente que mejore la seguridad y reduzca el consumo ineficiente de energía eléctrica en los salones del Colegio Unión Europea?"
+                        </blockquote>
+                        <p class="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-800">
+                            Formulación del proyecto escolar de grado 10°
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. JUSTIFICACIÓN ==================== -->
+    <section id="justificacion" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Relevancia Institucional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Justificación del Proyecto</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-emerald-500 transition duration-300 shadow-xl">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Justificación Ambiental</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Fomenta el uso responsable y consciente de la energía eléctrica, evitando el desperdicio en aulas desocupadas y promoviendo una cultura de cuidado ambiental en toda la institución.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-blue-400 transition duration-300 shadow-xl">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-cpu"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Justificación Tecnológica</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aplica sensores, actuadores y microcontroladores programables para ofrecer una respuesta automática a una necesidad cotidiana de infraestructura escolar.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 hover:border-yellow-400 transition duration-300 shadow-xl">
+                    <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Educativa y de Seguridad</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Promueve el aprendizaje práctico en programación y electrónica en estudiantes de 10°, al tiempo que contribuye a disuadir intromisiones y proteger las aulas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. OBJETIVOS ==================== -->
+    <section id="objetivos" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Ruta Metodológica</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Objetivos del Proyecto</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="mb-12 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-emerald-950/40 p-8 sm:p-10 rounded-3xl border border-emerald-500/40 shadow-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-9 h-9 rounded-xl bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-sm shadow-md">OG</span>
+                    <h3 class="text-xl font-bold text-emerald-400">Objetivo General</h3>
+                </div>
+                <p class="text-lg sm:text-xl text-white font-semibold leading-relaxed">
+                    "Diseñar e implementar un prototipo de salón inteligente mediante sensores y sistemas de automatización para reducir el consumo ineficiente de energía eléctrica y fortalecer la seguridad en la institución educativa."
+                </p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-300 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-emerald-400"></i> Objetivos Específicos:
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <span class="text-3xl font-black text-emerald-400 mb-2 block">01</span>
+                    <h4 class="font-bold text-white text-base mb-2">Diagnóstico y Vulnerabilidades</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Identificar los puntos críticos de consumo de energía y las posibles vulnerabilidades de seguridad de los salones mediante listas de observación y encuestas.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <span class="text-3xl font-black text-emerald-400 mb-2 block">02</span>
+                    <h4 class="font-bold text-white text-base mb-2">Arquitectura e Integración</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Diseñar una arquitectura técnica que integre sensores de movimiento y actuadores automáticos para controlar la iluminación y generar alertas ante movimientos detectados.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <span class="text-3xl font-black text-emerald-400 mb-2 block">03</span>
+                    <h4 class="font-bold text-white text-base mb-2">Evaluación y Mediciones</h4>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Evaluar la eficacia del prototipo mediante pruebas de funcionamiento, estimaciones del ahorro energético y observaciones del tiempo de respuesta del sistema.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. MISIÓN Y VISIÓN ==================== -->
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 hover:border-emerald-500 transition duration-300 shadow-xl relative overflow-hidden">
+                    <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Misión</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        "Desarrollar e implementar un prototipo de salón inteligente mediante el uso de sensores y automatización tecnológica, con el fin de optimizar el consumo de energía eléctrica y fortalecer la seguridad de los espacios educativos para el bienestar de toda la comunidad escolar."
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 hover:border-yellow-400 transition duration-300 shadow-xl relative overflow-hidden">
+                    <div class="w-14 h-14 bg-yellow-500/20 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Visión</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        "Para el próximo año, consolidar nuestro prototipo de salón inteligente como un modelo de referencia tecnológica dentro de la institución educativa, demostrando la reducción del desperdicio de energía y sirviendo de base para la automatización de más aulas de clase."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. FUNCIONAMIENTO DEL PROTOTIPO ==================== -->
+    <section id="funcionamiento" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">Pasos Explicativos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Funcionamiento del Prototipo</h2>
+                <p class="text-slate-400 text-sm mt-2">Diagrama de flujo del control de iluminación y seguridad</p>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 relative text-center">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold mx-auto mb-3 flex items-center justify-center text-xs">Paso 1</div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm mb-1">Detección PIR</h4>
+                    <p class="text-[11px] text-slate-300">El sensor PIR detecta movimiento en el área asignada del aula.</p>
+                </div>
+
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 relative text-center">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold mx-auto mb-3 flex items-center justify-center text-xs">Paso 2</div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm mb-1">Procesamiento</h4>
+                    <p class="text-[11px] text-slate-300">El microcontrolador recibe la información y ejecuta la lógica.</p>
+                </div>
+
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 relative text-center">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold mx-auto mb-3 flex items-center justify-center text-xs">Paso 3</div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm mb-1">Iluminación</h4>
+                    <p class="text-[11px] text-slate-300">Enciende o apaga las luces según la presencia detectada.</p>
+                </div>
+
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 relative text-center">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold mx-auto mb-3 flex items-center justify-center text-xs">Paso 4</div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm mb-1">Medición LDR</h4>
+                    <p class="text-[11px] text-slate-300">Evalúa si la luz natural es suficiente para ahorrar bombillas.</p>
+                </div>
+
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 relative text-center">
+                    <div class="w-8 h-8 rounded-full bg-red-500 text-white font-bold mx-auto mb-3 flex items-center justify-center text-xs">Paso 5</div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm mb-1">Alerta Buzzer</h4>
+                    <p class="text-[11px] text-slate-300">Activa el zumbador ante movimiento fuera del horario escolar.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center max-w-3xl mx-auto font-mono text-xs text-emerald-400 overflow-x-auto shadow-inner">
+                Sensores (PIR / LDR) &rarr; Microcontrolador (Arduino/ESP32) &rarr; Decisión Programada &rarr; Actuadores (Luces / Alarma Buzzer)
+            </div>
+
+            <div class="mt-6 text-center text-slate-400 text-xs max-w-2xl mx-auto">
+                * Aclaración técnica: El comportamiento dependerá de la programación y de las pruebas. El sensor PIR detecta movimiento, pero no identifica a las personas ni sustituye por sí solo la seguridad física institucional.
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 9. COMPONENTES ELECTRÓNICOS ==================== -->
+    <section id="componentes" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Hardware Seleccionado</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Componentes Electrónicos</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Arduino o ESP32</h4>
+                        <p class="text-xs text-slate-400 mt-1">Microcontrolador que procesa las señales de los sensores y controla las salidas del circuito.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-person-walking"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Sensor PIR</h4>
+                        <p class="text-xs text-slate-400 mt-1">Detecta movimiento de personas dentro de su área de cobertura mediante radiación infrarroja.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Sensor LDR</h4>
+                        <p class="text-xs text-slate-400 mt-1">Detecta variaciones en la intensidad de la luz ambiental para optimizar el consumo.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-toggle-on"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Módulo de Relé</h4>
+                        <p class="text-xs text-slate-400 mt-1">Permite conmutar y controlar un circuito de iluminación de mayor voltaje de forma aislada.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Buzzer o Zumbador</h4>
+                        <p class="text-xs text-slate-400 mt-1">Produce una señal sonora de advertencia para la función de alarma de seguridad.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-slate-700 text-slate-300 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Protoboard</h4>
+                        <p class="text-xs text-slate-400 mt-1">Permite organizar y ensayar las conexiones electrónicas sin soldaduras durante las pruebas.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Cables de Conexión</h4>
+                        <p class="text-xs text-slate-400 mt-1">Cables Jumper macho/hembra para interconectar los sensores y pines del microcontrolador.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-car-battery"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Fuente de Alimentación</h4>
+                        <p class="text-xs text-slate-400 mt-1">Proporciona la energía regulada necesaria para el funcionamiento continuo del prototipo.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-slate-700 transition">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-box font-bold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Carcasa Protectora</h4>
+                        <p class="text-xs text-slate-400 mt-1">Organiza y resguarda los componentes electrónicos dentro del espacio del aula.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ilustración del Circuito y Maqueta Escolar (imagen2.png) -->
+            <div class="mt-12 bg-slate-900 p-6 rounded-3xl border border-slate-800 max-w-3xl mx-auto text-center shadow-xl">
+                <h4 class="font-bold text-white text-sm mb-4">Esquema Ilustrativo del Circuito y Maqueta</h4>
+                <div class="bg-white p-2.5 rounded-2xl inline-block max-w-full shadow-inner border border-slate-700">
+                    <img src="imagen2.png" alt="Circuito del Salón Inteligente" class="w-full max-w-md h-auto rounded-xl object-contain mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b192c/ffffff?text=Esquema+Circuito';">
+                </div>
+                <p class="text-xs text-slate-400 mt-3">Esquema previsto de montaje para el control de luces, ventilador y sensor PIR con Arduino/ESP32.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 10. BENEFICIOS E IMPACTO ==================== -->
+    <section id="impacto" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Aporte Institucional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Beneficios e Impacto</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-piggy-bank text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Ahorro Energético</h4>
+                    <p class="text-xs text-slate-300 mt-1">Ayuda a evitar que las luces permanezcan encendidas innecesariamente.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-blue-400/50 transition">
+                    <i class="fa-solid fa-shield-virus text-blue-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Seguridad Escolar</h4>
+                    <p class="text-xs text-slate-300 mt-1">Permite generar alertas ante movimientos detectados en horarios configurados.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-leaf text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Sostenibilidad</h4>
+                    <p class="text-xs text-slate-300 mt-1">Fomenta el uso responsable de la electricidad en la comunidad educativa.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-yellow-400/50 transition">
+                    <i class="fa-solid fa-sliders text-yellow-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Automatización</h4>
+                    <p class="text-xs text-slate-300 mt-1">Reduce la dependencia del encendido y apagado manual tradicional.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-yellow-400/50 transition">
+                    <i class="fa-solid fa-graduation-cap text-yellow-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Innovación Educativa</h4>
+                    <p class="text-xs text-slate-300 mt-1">Permite aprender sobre electrónica, sensores y programación aplicada.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-blue-400/50 transition">
+                    <i class="fa-solid fa-lock text-blue-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Protección de Espacios</h4>
+                    <p class="text-xs text-slate-300 mt-1">Contribuye a la supervisión preventiva de las aulas mediante alertas sonoras.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition sm:col-span-2 lg:col-span-2">
+                    <i class="fa-solid fa-expand text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-base">Posibilidad de Expansión</h4>
+                    <p class="text-xs text-slate-300 mt-1">Establece las bases pedagógicas para estudiar futuras mejoras y aplicaciones en más aulas de clase.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center text-xs text-slate-400 max-w-3xl mx-auto">
+                * Nota ética: El proyecto no afirma eliminar por completo los riesgos de seguridad ni haber alcanzado porcentajes de ahorro sin pruebas empíricas previas.
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 11. CLIENTE OBJETIVO Y ESTUDIO DE MERCADO ==================== -->
+    <section id="mercado" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">Análisis Comercial Escolar</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Cliente Objetivo y Estudio de Mercado</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4 text-slate-300 text-sm">
+                    <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                        <strong class="text-white block text-base mb-1"><i class="fa-solid fa-school text-emerald-400 mr-2"></i>Clientes Potenciales:</strong>
+                        Instituciones educativas públicas y privadas interesadas en la automatización, eficiencia energética y fortalecimiento de la seguridad escolar.
+                    </div>
+                    <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                        <strong class="text-white block text-base mb-1"><i class="fa-solid fa-user-tie text-blue-400 mr-2"></i>Tomadores de Decisiones:</strong>
+                        Rectores, directivos, coordinadores administrativos y responsables del mantenimiento de la infraestructura.
+                    </div>
+                    <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                        <strong class="text-white block text-base mb-1"><i class="fa-solid fa-users text-yellow-400 mr-2"></i>Usuarios y Beneficiarios:</strong>
+                        Estudiantes, docentes, personal administrativo y servicios generales de la comunidad educativa.
+                    </div>
+                    <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                        <strong class="text-white block text-base mb-1"><i class="fa-solid fa-location-dot text-red-400 mr-2"></i>Ubicación Inicial y Edad de Compradores:</strong>
+                        Colegio Unión Europea y planteles educativos de Bogotá. Edad aproximada de decisores de compra: entre 25 y 60 años.
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-8 rounded-3xl border-2 border-emerald-500/40 shadow-2xl text-center relative overflow-hidden">
+                        <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl mx-auto flex items-center justify-center text-3xl mb-4 shadow-md">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Propuesta de Valor</h3>
+                        <blockquote class="text-sm text-slate-200 font-medium leading-relaxed mb-6 italic bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                            "Una solución tecnológica escolar pensada para aprovechar mejor la energía y contribuir a la protección de los espacios educativos."
+                        </blockquote>
+                        <p class="text-xs text-slate-400">
+                            Dado que la capacidad de compra depende del presupuesto institucional, el proyecto desarrolla una propuesta económica, accesible y altamente adaptable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 12. ENCUESTA DE VALIDACIÓN ==================== -->
+    <section id="encuesta" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Sondeo de Opinión</span>
+                <h2 class="text-3xl font-extrabold text-white mt-3">Encuesta de Validación</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-2">Sondeo dirigido a docentes, coordinadores y directivos institucionales.</p>
+            </div>
+
+            <form id="validation-form" onsubmit="handleSurveySubmit(event)" class="bg-slate-950 p-6 sm:p-10 rounded-3xl border border-slate-800 space-y-8 shadow-2xl">
+                
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">1. ¿En su institución quedan luces encendidas cuando los salones están vacíos?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p1" value="Siempre" required class="accent-emerald-500"> Siempre
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p1" value="Algunas veces" class="accent-emerald-500"> Algunas veces
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p1" value="Casi nunca" class="accent-emerald-500"> Casi nunca
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p1" value="Nunca" class="accent-emerald-500"> Nunca
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">2. ¿Considera necesario instalar sensores para controlar automáticamente las luces?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p2" value="Muy necesario" required class="accent-emerald-500"> Muy necesario
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p2" value="Necesario" class="accent-emerald-500"> Necesario
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p2" value="Poco necesario" class="accent-emerald-500"> Poco necesario
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p2" value="Nada necesario" class="accent-emerald-500"> Nada necesario
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">3. ¿Cuál considera que es el principal problema que podría ayudar a solucionar el proyecto?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p3" value="Desperdicio de energía" required class="accent-emerald-500"> Desperdicio energía
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p3" value="Seguridad" class="accent-emerald-500"> Seguridad salones
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p3" value="Falta de automatización" class="accent-emerald-500"> Automatización
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p3" value="Todos los anteriores" class="accent-emerald-500"> Todos los anteriores
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">4. ¿Qué tan útil considera detectar movimientos fuera del horario escolar mediante una alarma?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p4" value="Muy útil" required class="accent-emerald-500"> Muy útil
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p4" value="Útil" class="accent-emerald-500"> Útil
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p4" value="Poco útil" class="accent-emerald-500"> Poco útil
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p4" value="Nada útil" class="accent-emerald-500"> Nada útil
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">5. ¿Su institución estaría interesada en probar el prototipo?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p5" value="Definitivamente sí" required class="accent-emerald-500"> Definitivamente sí
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p5" value="Probablemente sí" class="accent-emerald-500"> Probablemente sí
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p5" value="Probablemente no" class="accent-emerald-500"> Probablemente no
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p5" value="Definitivamente no" class="accent-emerald-500"> Definitivamente no
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white mb-3">6. ¿Qué aspecto considera más importante en este sistema?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p6" value="Precio económico" required class="accent-emerald-500"> Precio económico
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p6" value="Seguridad" class="accent-emerald-500"> Seguridad
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p6" value="Ahorro de energía" class="accent-emerald-500"> Ahorro energía
+                        </label>
+                        <label class="bg-slate-900 p-3 rounded-xl border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500 transition">
+                            <input type="radio" name="p6" value="Fácil instalación" class="accent-emerald-500"> Fácil instalación
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-2xl transition shadow-xl text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Encuesta de Validación
+                    </button>
+                    <p class="text-xs text-slate-500 text-center mt-3 italic">
+                        * Aviso: Las respuestas no se guardan de forma permanente en esta versión demostrativa. La estructura queda lista para almacenamiento futuro.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== 13. METODOLOGÍA Y PRUEBAS ==================== -->
+    <section id="metodologia" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">Evaluación Experimental</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">¿Cómo evaluaremos el prototipo?</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Sensibilidad PIR
+                    </h4>
+                    <p class="text-xs text-slate-400">Verificar si el sensor PIR detecta movimiento correctamente según distancia y ángulos.</p>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Control de Iluminación
+                    </h4>
+                    <p class="text-xs text-slate-400">Comprobar si la iluminación responde de forma precisa a las instrucciones programadas.</p>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Diferenciación LDR
+                    </h4>
+                    <p class="text-xs text-slate-400">Probar si el sensor LDR ayuda a diferenciar las condiciones de luz natural en el salón.</p>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Activación de Alarma
+                    </h4>
+                    <p class="text-xs text-slate-400">Verificar si la alarma sonora se activa fielmente en las condiciones establecidas fuera de horario.</p>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Estabilidad del Sistema
+                    </h4>
+                    <p class="text-xs text-slate-400">Evaluar si el circuito y microcontrolador responden de forma continua y estable.</p>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i> Estimación de Ahorro
+                    </h4>
+                    <p class="text-xs text-slate-400">Estimar cuánta energía podría ahorrarse en comparación con el funcionamiento habitual mediante mediciones.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 text-center max-w-3xl mx-auto text-xs text-slate-300 shadow-xl">
+                <i class="fa-solid fa-triangle-exclamation text-yellow-400 mr-2 text-base"></i>
+                "Los resultados se registrarán después de realizar las pruebas. La eficacia del sistema se determinará a partir de los datos obtenidos, no de cifras supuestas."
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 14. SOSTENIBILIDAD Y FUTURAS MEJORAS ==================== -->
+    <section class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Proyección Futura</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Sostenibilidad y Futuras Mejoras</h2>
+                <p class="text-slate-400 text-sm mt-2">Promovemos una cultura de ahorro energético y responsabilidad ambiental</p>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-network-wired text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Más Sensores por Zonas</h4>
+                    <p class="text-xs text-slate-400 mt-1">Incorporar más sensores en diferentes zonas del aula para un control granular.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-desktop text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Panel de Monitoreo</h4>
+                    <p class="text-xs text-slate-400 mt-1">Crear un panel web centralizado para supervisar el estado del salón en tiempo real.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-bell text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Notificaciones a Responsables</h4>
+                    <p class="text-xs text-slate-400 mt-1">Añadir notificaciones digitales automáticas para el personal a cargo del aula.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-clock text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Programación de Horarios</h4>
+                    <p class="text-xs text-slate-400 mt-1">Mejorar la lógica de horarios lectivos y periodos de receso escolar.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-bolt text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Monitoreo de Consumo</h4>
+                    <p class="text-xs text-slate-400 mt-1">Explorar la medición del consumo eléctrico real en kWh consumidos.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-emerald-500/50 transition">
+                    <i class="fa-solid fa-building text-emerald-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm">Ampliación Institucional</h4>
+                    <p class="text-xs text-slate-400 mt-1">Estudiar la posibilidad de escalar el prototipo a otros salones del colegio.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-xs text-slate-400">
+                * Estas propuestas se presentan como ideas y horizontes de desarrollo futuro, no como funciones actualmente implementadas.
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 15. EQUIPO DEL PROYECTO ==================== -->
+    <section id="equipo" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">Ficha del Proyecto</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Nuestro Equipo</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-800 max-w-2xl mx-auto shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Institución Educativa:</span>
+                        <p class="font-bold text-white text-base mt-0.5">Colegio Unión Europea</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Curso / Grado:</span>
+                        <p class="font-bold text-white text-base mt-0.5">Grado 10°</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Docente Orientador:</span>
+                        <p class="font-bold text-white text-base mt-0.5">[Por asignar / Completar docente]</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Año Lectivo:</span>
+                        <p class="font-bold text-white text-base mt-0.5">2026</p>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-800">
+                    <span class="text-xs text-slate-500 uppercase font-bold tracking-wider block mb-3">Estudiantes Integrantes:</span>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-300">
+                        <li class="flex items-center gap-2.5 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+                            <i class="fa-solid fa-user-gear text-emerald-400"></i> Estudiante 1: [Nombre por ingresar]
+                        </li>
+                        <li class="flex items-center gap-2.5 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+                            <i class="fa-solid fa-user-gear text-emerald-400"></i> Estudiante 2: [Nombre por ingresar]
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 16. CONTACTO Y PIE DE PÁGINA ==================== -->
+    <section id="contacto" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
+                    "La tecnología puede ayudarnos a construir espacios educativos más seguros y sostenibles"
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-3">Envíanos tus comentarios, dudas o sugerencias sobre la iniciativa.</p>
+            </div>
+
+            <form onsubmit="handleContactSubmit(event)" class="bg-slate-950 p-6 sm:p-10 rounded-3xl border border-slate-800 space-y-4 shadow-2xl">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Nombre Completo</label>
+                    <input type="text" required placeholder="Ingresa tu nombre" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Correo Electrónico</label>
+                    <input type="email" required placeholder="correo@ejemplo.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Mensaje</label>
+                    <textarea rows="4" required placeholder="Escribe tu mensaje o inquietud sobre el proyecto..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl transition shadow-xl text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                </button>
+                <p class="text-[11px] text-slate-500 text-center italic">
+                    * El formulario aún no envía datos a un servidor. Demostración de interfaz.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER FIJO -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-medium text-slate-400">Salón Inteligente: Tecnología para un futuro sostenible</p>
+            <p class="mt-1">Proyecto tecnológico escolar de Grado 10° • Colegio Unión Europea • Bogotá 2026</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE NOTIFICACIÓN POPUP -->
+    <div id="demo-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-slate-700 shadow-2xl space-y-4 text-center">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl mx-auto flex items-center justify-center text-3xl shadow-inner">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold" id="modal-title">¡Información Registrada!</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="modal-body">
+                Esta es una simulación visual. Las respuestas no se guardan de manera permanente en este momento.
+            </p>
+            <button onclick="closeModal()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL VISOR DE IMAGEN AMPLIADA -->
+    <div id="image-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl w-full bg-slate-900 rounded-2xl p-2 border border-slate-700 shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-white w-10 h-10 rounded-full flex items-center justify-center border border-slate-600 z-10 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <img id="modal-img-preview" src="" alt="Vista Ampliada" class="w-full h-auto max-h-[85vh] object-contain rounded-xl">
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DE INTERACTIVIDAD -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function openImageModal(src) {
+            document.getElementById('modal-img-preview').src = src;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+
+        function setSimState(state) {
+            const protoImg = document.getElementById('prototype-img');
+            const statusText = document.getElementById('sim-status-text');
+
+            if (state === 'occupied-day') {
+                protoImg.style.filter = "brightness(1) contrast(1)";
+                statusText.innerText = "Estado: Día c/ Ocupantes. Sensor PIR activo. Luz natural suficiente detectada por LDR. Relé regula iluminación.";
+                statusText.className = "mt-3 text-[11px] text-emerald-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800";
+            } else if (state === 'empty-day') {
+                protoImg.style.filter = "brightness(0.7) grayscale(0.3)";
+                statusText.innerText = "Estado: Aula desocupada. Sin movimiento. Microcontrolador apaga luces y ventiladores para ahorrar energía.";
+                statusText.className = "mt-3 text-[11px] text-slate-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800";
+            } else if (state === 'occupied-dark') {
+                protoImg.style.filter = "brightness(1.1) saturate(1.2)";
+                statusText.innerText = "Estado: Oscuro c/ Presencia. LDR detecta baja luz natural. Sistema enciende luminarias de forma automática.";
+                statusText.className = "mt-3 text-[11px] text-amber-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800";
+            } else if (state === 'alert-night') {
+                protoImg.style.filter = "sepia(0.5) hue-rotate(300deg) brightness(1.1)";
+                statusText.innerText = "¡ALERTA DE SEGURIDAD! Movimiento fuera de horario escolar. Alarma sonora (Buzzer) activada.";
+                statusText.className = "mt-3 text-[11px] text-red-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800 animate-pulse";
+            }
+        }
+
+        function showModal(title, body) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-body').innerText = body;
+            document.getElementById('demo-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('demo-modal').classList.add('hidden');
+        }
+
+        function handleSurveySubmit(e) {
+            e.preventDefault();
+            showModal(
+                "¡Gracias por responder!",
+                "Las respuestas no se guardan de manera permanente en esta versión demostrativa. La estructura queda preparada para conectar un servicio de almacenamiento."
+            );
+            document.getElementById('validation-form').reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showModal(
+                "Mensaje Enviado",
+                "Gracias por comunicarte con el equipo del proyecto Salón Inteligente del Colegio Unión Europea. Los datos todavía no se envían a un servidor de forma permanente."
+            );
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
